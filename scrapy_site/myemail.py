@@ -11,10 +11,18 @@ from email.mime.text import MIMEText
 from scrapy_site.common.consts import const
 
 from scrapy_site.utils.log import get_log
+from scrapy_site.utils.add_dir import mkdir
 
 sys.path.append('../scrapy_site')
 # 获取当前目录，当前目录为scrapy_site项目的根目录
+
+log_path = '/log/'
+msg_path = '/scrapy_site/msg/'
+
 curpath = os.getcwd()
+mkdir(curpath + log_path)
+mkdir(curpath + msg_path)
+
 _log = get_log(__name__, curpath + '/log/email.log')
 
 
